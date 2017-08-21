@@ -58,7 +58,7 @@
 neat code, easy to use
 
 #### How to use
-subclass BTJsonModel，override the flowing method: 
+subclass BTJsonModel，override the flowing method:    
          `+ (NSDictionary *)localServerKeyMap;`   
          
   implement it like the flowing:   
