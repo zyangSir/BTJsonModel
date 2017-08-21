@@ -1,7 +1,7 @@
 ## OC数据模型与JSON数据互转类    
   
 #### 解决了什么    
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;当业务需求涉及到服务端时，免不了要根据后端的JSON数据返回形式来编写对应的解析Class，来把JSON数据转换成OC Model供后续使用。而当接口比较多，数据返回形式比较多时，这一步骤就很耗时，严重影响效率。而有了BTJsonModel，你要做的仅仅是:   
+&emsp;&emsp;&emsp;当业务需求涉及到服务端时，免不了要根据后端的JSON数据返回形式来编写对应的解析Class，来把JSON数据转换成OC Model供后续使用。而当接口比较多，数据返回形式比较多时，这一步骤就很耗时，严重影响效率。而有了BTJsonModel，你要做的仅仅是:   
 
        1.子类化BTJsonModel  
        2.实现下本地属性名与JSON数据字段名的映射关系表     
@@ -26,7 +26,7 @@
 ## Lite Exchanger between OC data model And Json    
        
 #### What problem it solved   
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;When functions need to comunicate with server, you need to write some data model classes to **pack** or **unpack** Json data accroding to the specific server api. And when there were lots of these server api、json format，you need to spend a huge number of time to do such things. But now with BTJsonModel, all you need to do are 2 steps:     
+&emsp;&emsp;&emsp;When functions need to comunicate with server, you need to write some data model classes to **pack** or **unpack** Json data accroding to the specific server api. And when there were lots of these server api、json format，you need to spend a huge number of time to do such things. But now with BTJsonModel, all you need to do are 2 steps:     
 
        1.subclass BTJsonModel  
        2.implement the mapping table between property name and data key name in Json      
