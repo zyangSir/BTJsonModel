@@ -13,8 +13,30 @@
 
 #### 怎样使用
 根据后端的JSON返回形式，子类化这个类，覆盖以下方法:     
-         `+ (NSDictionary *)localServerKeyMap;`   
-         将本地数据模型的属性名和服务端JSON字段的对应关系交代下，之后使用以下两个方法:  
+         `+ (NSDictionary *)localServerKeyMap;`  
+         
+  并实现映射关系表   
+         
+    /**
+      本地modelClass 与 服务端报文  键名映射关系表
+      @return 键名映射关系表
+    */
+    + (NSDictionary *)localServerKeyMap{
+    	//左侧为本地属性名，右侧是服务端报文
+        NSDictionary *map = @{
+                               @"avatarURLStr": @"avatar",
+                               @"user_id" : @"user_id",
+                               @"mobileNo" : @"mobile",
+                               @"name" : @"name",
+                               @"sex" : @"gender",
+                               @"birthDate" : @"birthday",
+                               @"hometown" : @"hometown",
+                            };
+       return map;
+    }
+         
+          
+   之后使用以下两个方法:  
          
     - (instancetype)initWithDictionary:(NSDictionary *)jsonDic;
     - (NSDictionary *)jsonDictionary;`    
@@ -29,7 +51,7 @@
 &emsp;&emsp;&emsp;When functions need to comunicate with server, you need to write some data model classes to **pack** or **unpack** Json data accroding to the specific server api. And when there were lots of these server api、json format，you need to spend a huge number of time to do such things. But now with BTJsonModel, all you need to do are 2 steps:     
 
        1.subclass BTJsonModel  
-       2.implement the mapping table between property name and data key name in Json      
+       2.implement a mapping table       
        
    &emsp;&emsp;&emsp;then you could comunicate with json data happily.
 #### Features   
@@ -39,7 +61,30 @@ neat code, easy to use
 subclass BTJsonModel，override the flowing method: 
          `+ (NSDictionary *)localServerKeyMap;`   
          
-implement the mapping table between property name and data key name in Json ，then use two following instance methods where you need do translation between OC model and Json data:  
+  implement it like the flowing:   
+         
+    /**
+      oc modelClass & server json mapping table
+      @return mapping table
+    */
+    + (NSDictionary *)localServerKeyMap{
+    	//left is local objective-C prperty name
+    	//right is json key name
+        NSDictionary *map = @{
+                              @"avatarURLStr": @"avatar",
+                              @"user_id" : @"user_id",
+                              @"mobileNo" : @"mobile",
+                              @"name" : @"name",
+                              @"sex" : @"gender",
+                              @"birthDate" : @"birthday",
+                              @"hometown" : @"hometown",
+                            };
+       return map;
+    }
+         
+
+
+then use two following instance methods where you need do translation between OC model and Json data:  
          
     - (instancetype)initWithDictionary:(NSDictionary *)jsonDic;
     - (NSDictionary *)jsonDictionary;   
