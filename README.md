@@ -6,7 +6,7 @@
        1.子类化BTJsonModel  
        2.实现下本地属性名与JSON数据字段名的映射关系表     
        
-   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;之后就能愉快地和来自服务端的JSON数据打交道了。 
+   &emsp;&emsp;&emsp;之后就能愉快地和来自服务端的JSON数据打交道了。 
    
 #### 特点   
 代码精简，使用方便     
@@ -31,7 +31,7 @@
        1.subclass BTJsonModel  
        2.implement the mapping table between property name and data key name in Json      
        
-   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;then you could comunicate with json data happily.
+   &emsp;&emsp;&emsp;then you could comunicate with json data happily.
 #### Features   
 neat code, easy to use
 
